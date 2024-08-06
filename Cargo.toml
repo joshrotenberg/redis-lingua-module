@@ -1,0 +1,22 @@
+[package]
+name = "redis-lingua"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+integration-tests = []
+
+[dependencies]
+redis-module = { version = "^2.0.7", default-features = false, features = ["min-redis-compatibility-version-7-2"] }
+redis-module-macros = "^2.0.7"
+lingua = "1.6.2"
+
+[dev-dependencies]
+testcontainers = { version = "0.21.0", features = ["blocking"] }
+redis = "0.26.1"
+
+[build-dependencies]
+anyhow = "1.0.56"
